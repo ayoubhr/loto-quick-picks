@@ -21,7 +21,7 @@ public class LotteryUtils {
 
     public static void paintYourDraw(List<Integer> ballsDrawn) {
 
-        System.out.println("\033[1;37m" + "\nDrawn balls: " + ballsDrawn +"\033[1;37m" + "\n");
+        System.out.println("\033[0;32m" + "\nDrawn balls: " + ballsDrawn + "\n");
 
         int number = 0;
 
@@ -30,52 +30,30 @@ public class LotteryUtils {
 
                 if(columns == 0){
                     if(rows+columns == 0){
-                        System.out.print("  "+"\033[030m");
+                        System.out.print("  " + "\033[030m");
                     } else {
-                        if(ballsDrawn.contains(number+1)) {
-
-                            System.out.print("\033[0;31m" + (number+1) + " "+"\033[030m");
-
-                        } else {
-                            System.out.print((number+1) + " "+"\033[030m");
-                        }
+                        toStr(ballsDrawn, number+1);
                         number++;
                     }
                 } else if(columns == 1){
-                    if(ballsDrawn.contains(number+10)) {
-
-                        System.out.print("\033[0;31m" + (number+10) + " "+"\033[030m");
-
-                    } else {
-                        System.out.print((number+10) + " "+"\033[030m");
-                    }
+                    toStr(ballsDrawn, number+10);
                 } else if(columns == 2){
-                    if(ballsDrawn.contains(number+20)) {
-
-                        System.out.print("\033[0;31m" + (number+20) + " "+"\033[030m");
-
-                    } else {
-                        System.out.print((number+20) + " "+"\033[030m");
-                    }
+                    toStr(ballsDrawn, number+20);
                 } else if(columns == 3){
-                    if(ballsDrawn.contains(number+30)) {
-
-                        System.out.print("\033[0;31m" + (number+30) + " "+"\033[030m");
-
-                    } else {
-                        System.out.print((number+30) + " "+"\033[030m");
-                    }
+                    toStr(ballsDrawn, number+30);
                 } else {
-                    if(ballsDrawn.contains(number+40)) {
-
-                        System.out.print("\033[0;31m" + (number+40) + " "+"\033[030m");
-
-                    } else {
-                        System.out.print((number+40) + " "+"\033[030m");
-                    }
+                    toStr(ballsDrawn, number+40);
                 }
             }
             System.out.println();
+        }
+    }
+
+    private static void toStr(List<Integer> ballsDrawn, int number) {
+        if(ballsDrawn.contains(number)) {
+            System.out.print("\033[0;31m" + (number) + " "+"\033[030m");
+        } else {
+            System.out.print((number) + " "+"\033[030m");
         }
     }
 }

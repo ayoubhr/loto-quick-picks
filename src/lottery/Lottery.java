@@ -14,7 +14,7 @@ public class Lottery {
 
         long end = System.currentTimeMillis();
 
-        System.out.println("\033[1;37m" + "\nExecution time: " + (end - start) + "ms"+"\033[1;37m");
+        System.out.println("\033[0;32m" + "\nExecution time: " + (end - start) + "ms");
     }
     
 }
