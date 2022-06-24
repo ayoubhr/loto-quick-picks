@@ -4,4 +4,4 @@ Basic ant Java 11 project, does not need any build or preparations, just fetch o
 
 Run example:
 
-![Image](/resultExample.png)
+![Image](/output.png)
