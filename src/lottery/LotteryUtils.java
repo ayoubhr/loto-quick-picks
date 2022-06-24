@@ -65,7 +65,7 @@ public class LotteryUtils {
             // print the number in red
             System.out.print("\033[0;31m" + (number) + " "+"\033[030m");
         } else {
-            // dont change the color
+            // don't change the color
             System.out.print((number) + " "+"\033[030m");
         }
     }
