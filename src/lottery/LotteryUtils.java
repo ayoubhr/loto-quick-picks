@@ -28,21 +28,27 @@ public class LotteryUtils {
         for(int rows = 0; rows<10; rows++){
             for(int columns = 0; columns<5; columns++){
 
-                if(columns == 0){
-                    if(rows+columns == 0){
-                        System.out.print("  " + "\033[030m");
-                    } else {
-                        toStr(ballsDrawn, number+1);
-                        number++;
-                    }
-                } else if(columns == 1){
-                    toStr(ballsDrawn, number+10);
-                } else if(columns == 2){
-                    toStr(ballsDrawn, number+20);
-                } else if(columns == 3){
-                    toStr(ballsDrawn, number+30);
-                } else {
-                    toStr(ballsDrawn, number+40);
+                switch(columns) {
+                    case 0:
+                        if(rows+columns == 0){
+                            System.out.print("  " + "\033[030m");
+                        } else {
+                            toStr(ballsDrawn, number+1);
+                            number++;
+                        }
+                        break;
+                    case 1:
+                        toStr(ballsDrawn, number+10);
+                        break;
+                    case 2:
+                        toStr(ballsDrawn, number+20);
+                        break;
+                    case 3:
+                        toStr(ballsDrawn, number+30);
+                        break;
+                    case 4:
+                        toStr(ballsDrawn, number+40);
+                        break;
                 }
             }
             System.out.println();
