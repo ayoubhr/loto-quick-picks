@@ -1,12 +1,14 @@
 package lottery;
 
+import java.util.List;
+
 public class Lottery {
 
     public static void main(String[] args) {
 
         long start = System.currentTimeMillis();
 
-        int[] ballsDrawn = LotteryUtils.yourLuckyNumbers();
+        List<Integer> ballsDrawn = LotteryUtils.yourLuckyNumbers();
 
         LotteryUtils.paintYourDraw(ballsDrawn);
 
