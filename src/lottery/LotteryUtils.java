@@ -23,42 +23,49 @@ public class LotteryUtils {
 
         System.out.println("\033[0;32m" + "\nDrawn balls: " + ballsDrawn + "\n");
 
-        int number = 0;
+        int ball = 0;
+        int columns = 0;
 
-        for(int rows = 0; rows<10; rows++){
-            for(int columns = 0; columns<5; columns++){
+            for(int iterator = 0; iterator<50; iterator++){
 
                 switch(columns) {
                     case 0:
-                        if(rows+columns == 0){
+                        if(iterator == 0){
                             System.out.print("  " + "\033[030m");
                         } else {
-                            toStr(ballsDrawn, number+1);
-                            number++;
+                            print(ballsDrawn, ball+1);
+                            ball++;
                         }
                         break;
                     case 1:
-                        toStr(ballsDrawn, number+10);
+                        print(ballsDrawn, ball+10);
                         break;
                     case 2:
-                        toStr(ballsDrawn, number+20);
+                        print(ballsDrawn, ball+20);
                         break;
                     case 3:
-                        toStr(ballsDrawn, number+30);
+                        print(ballsDrawn, ball+30);
                         break;
                     case 4:
-                        toStr(ballsDrawn, number+40);
+                        print(ballsDrawn, ball+40);
                         break;
+                } // end switch
+
+                if(columns < 4) {
+                    columns++;
+                } else if(columns == 4) {
+                    columns = 0;
+                    System.out.println();
                 }
             }
-            System.out.println();
-        }
     }
 
-    private static void toStr(List<Integer> ballsDrawn, int number) {
+    private static void print(List<Integer> ballsDrawn, int number) {
         if(ballsDrawn.contains(number)) {
+            // print the number in red
             System.out.print("\033[0;31m" + (number) + " "+"\033[030m");
         } else {
+            // dont change the color
             System.out.print((number) + " "+"\033[030m");
         }
     }

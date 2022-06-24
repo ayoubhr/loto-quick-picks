@@ -6,15 +6,15 @@ public class Lottery {
 
     public static void main(String[] args) {
 
-        long start = System.currentTimeMillis();
+        double start = System.currentTimeMillis();
 
         List<Integer> ballsDrawn = LotteryUtils.yourLuckyNumbers();
 
         LotteryUtils.paintYourDraw(ballsDrawn);
 
-        long end = System.currentTimeMillis();
+        double end = System.currentTimeMillis();
 
-        System.out.println("\033[0;32m" + "\nExecution time: " + (end - start) + "ms");
+        System.out.println("\033[0;32m" + "\nExecution time: " + ((end - start)/1000) + " seconds");
     }
     
 }
